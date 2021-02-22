@@ -1,0 +1,620 @@
+body{
+	margin: 0;
+	background-image: linear-gradient(#43cea2 , #185a9d);
+}
+
+p{
+  color:#525252;
+  font-size:12px;
+}
+.Count:after{
+  content:"%"
+}
+
+.skillbar {
+	position:relative;
+	display:block;
+	margin-bottom:15px;
+	width:100%;
+	background:#eee;
+	height:35px;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	-webkit-transition:0.4s linear;
+	-moz-transition:0.4s linear;
+	-ms-transition:0.4s linear;
+	-o-transition:0.4s linear;
+	transition:0.4s linear;
+	-webkit-transition-property:width, background-color;
+	-moz-transition-property:width, background-color;
+	-ms-transition-property:width, background-color;
+	-o-transition-property:width, background-color;
+	transition-property:width, background-color;
+}
+
+.skillbar-title {
+	position:absolute;
+	top:0;
+	left:0;
+width:110px;
+	font-weight:bold;
+	font-size:13px;
+	color:#ffffff;
+	background:#6adcfa;
+	-webkit-border-top-left-radius:3px;
+	-webkit-border-bottom-left-radius:4px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-bottomleft:3px;
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+
+.skillbar-title span {
+	display:block;
+	background:rgba(0, 0, 0, 0.1);
+	padding:0 20px;
+	height:35px;
+	line-height:35px;
+	-webkit-border-top-left-radius:3px;
+	-webkit-border-bottom-left-radius:3px;
+	-moz-border-radius-topleft:3px;
+	-moz-border-radius-bottomleft:3px;
+	border-top-left-radius:3px;
+	border-bottom-left-radius:3px;
+}
+
+.skillbar-bar {
+	height:35px;
+	width:0px;
+	background:#6adcfa;
+	border-radius:3px;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+}
+
+.skill-bar-percent {
+	position:absolute;
+	right:10px;
+	top:0;
+	font-size:11px;
+	height:35px;
+	line-height:35px;
+	color:#ffffff;
+	color:rgba(0, 0, 0, 0.4);
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+section {
+	padding: 100px;
+}
+.banner {
+	position: relative;
+	min-height: 100vh;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 300px;
+}
+.banner h2 {
+	font-size: 3em;
+	color: #4e4376;
+	font-weight: 500;
+	line-height: 1.5em;
+	font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+}
+.banner h2 span {
+	font-size: 1.5em;
+	font-weight: 700;
+}
+.banner h3 {
+	font-size: 1.5em;
+	font-weight: 500;
+	color: #4e4376;
+	font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+	text-align: justify;
+}
+
+header {
+	background-color: rgba(255,255,255);;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 10px 100px;
+	z-index: 1000;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	transition: 0.5s;
+	color: #000;
+}
+header .sticky {
+	background: #fff;
+	padding: 20px 100px;
+	box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+header .logo {
+	font-size: 1.85rem;
+    font-weight: 800;
+    color: #000;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+}
+
+header .sticky .logo {
+	color: #111;
+}
+header ul {
+	position: relative;
+	display: flex;
+}
+header ul li {
+	position: relative;
+	list-style: none;
+}
+header ul li a {
+	position: relative;
+	display: inline-block;
+	margin: 0 15px;
+	text-decoration: none;
+	color: #000;
+	font-size: 1.85rem;
+	font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+}
+
+.heading {
+	width: 100%;
+	text-align: center;
+	margin-bottom: 30px;
+	color: #111;
+}
+.heading h2 {
+	position: relative;
+	text-align: center;
+	font-size: 40px;
+	font-weight: 500;
+	color: #fff;
+	margin-bottom: 60px;
+	padding-bottom: 20px;
+	font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+} 
+
+.content {
+	display: flex;
+	margin-left: 150px;
+	}
+.contentBx {
+	padding-right: 0px;
+	color: #120744;
+	margin-left: 20px;	
+}
+.contentBx h3 {
+	font-size: 24x;
+	margin-bottom: 10px;
+	color: #120744;
+}
+.w50 {
+	margin-left: 100px;
+	width: 300px;
+	font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+}
+
+.contentBx p {
+	font-size: 14px;
+	margin-bottom: 10px;
+	color: #120744;
+}
+
+img {
+	max-width: 100%;
+	border-radius: 8px;
+	height: 300px;
+}
+
+.shadow {
+	background: rgba(100,255,218,0.1);
+}
+.w50 img .shadow:hover {
+	opacity: 1;
+}
+.main {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.typewriter-text {
+	display: inline-block;
+	overflow: hidden;
+	letter-spacing: 2px;
+ animation: typing 5s steps(30, end), blink .75s step-end infinite;
+	white-space: nowrap;
+	font-size: 30px;
+	font-weight: 700;
+	border-right: 4px solid black;
+	box-sizing: border-box;
+}
+
+@keyframes typing {
+	from { 
+			width: 0% 
+	}
+	to { 
+			width: 100% 
+	}
+}
+
+@keyframes blink {
+	from, to { 
+			border-color: transparent 
+	}
+	50% { 
+			border-color: black; 
+	}
+}
+
+.skills {
+	width: 100%;
+	max-width: 600px;
+	padding: 0 20px;
+	font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+}
+.skills h1 {
+	position: relative;
+	text-align: center;
+	font-size: 40px;
+	font-weight: 500;
+	color: #fff;
+	padding-bottom: 20px;
+	font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+}
+.skills h2:hover {
+	color: #120744;
+}
+.skill-name {
+	font-size: 18px;
+	font-weight: 700;
+	margin: 20px 0;
+	color: #120744;
+	
+}
+.skill-bar {
+	height: 15px;
+	background: #cacaca;
+	border-radius: 8px;
+}
+.skill-per1 {
+	height: 15px;
+	background-color: #0fbcf9;
+	border-radius: 8px;
+	width: 90%;
+	position: relative;
+}
+.skill-per2 {
+	height: 15px;
+	border-radius: 8px;
+	background-color: #0fbcf9;
+	width: 85%;
+	position: relative;
+}
+.skill-per3 {
+	height: 15px;
+	border-radius: 8px;
+	background-color: #0fbcf9;
+	width: 70%;
+	position: relative;
+}
+.skill-per4 {
+	height: 15px;
+	border-radius: 8px;
+	background-color: #0fbcf9;
+	width: 80%;
+	position: relative;
+}
+.skill-per5 {
+	height: 15px;
+	border-radius: 8px;
+	background-color: #0fbcf9;
+	width: 60%;
+	position: relative;
+}
+.services {
+	color: #4e4376;
+	font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+}
+section .title {
+	position: relative;
+	text-align: center;
+	font-size: 40px;
+	font-weight: 500;
+	margin-bottom: 60px;
+	padding-bottom: 20px;
+	font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+}
+section .title:hover {
+	color: #64ffda;
+}
+section .title::before {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 180px;
+	height: 3px;
+	background: #120744;
+	transform: translateX(-50%);
+}
+section .title::after {
+	position: absolute;
+	bottom: -12px;
+	left: 50%;
+	font-size: 20px;
+	color: crimson;
+	padding: 5px;
+	background: #120744;
+	transform: translateX(-50%);
+}
+.services .serv-content {
+	display: flex;
+	color: #000;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.services .serv-content .card {
+	width: calc(33% - 20px);
+	/*background: #222;*/
+	text-align: center;
+	border-radius: 6px;
+	padding: 20px 25px;
+	cursor: pointer;
+}
+.services .serv-content .card i {
+	font-size: 50px;
+}
+.services .serv-content .card .text {
+	font-size: 25px;
+	font-weight: 500;
+	margin: 10px 0 7px 0;
+	transition: all 0.3s ease;	
+}
+.services .serv-content .card .box {
+	transition: all 0.3s ease;
+}
+.services .serv-content .card:hover .box {
+	transform: scale(1.05);
+}
+
+/*----------Section CONTACT-----------*/
+.max-width {
+	color: #fff;
+	margin-left: 30px;
+	font-family: "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+}
+.contact .contact-content .column{
+    width: calc(50% - 30px);
+}
+.contact .contact-content .text{
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.contact .contact-content .left p{
+    text-align: justify;
+}
+.contact .contact-content .left .icons{
+    margin: 10px 0;
+}
+.contact .contact-content .row{
+    display: flex;
+    height: 65px;
+    align-items: center;
+}
+.contact .contact-content .row .info{
+    margin-left: 30px;
+}
+.contact .contact-content .row i{
+    font-size: 25px;
+    color: #64ffda;;
+}
+.contact .contact-content .info .head{
+    font-weight: 500;
+}
+.contact .contact-content .info .sub-title{
+    color: #fff;
+}
+
+
+.contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 40%;
+    margin-bottom: 15px;
+}
+.contact .right form .textarea{
+    height: 80px;
+    width: 40%;
+}
+
+.contact .right form .field input,
+.contact .right form .textarea textarea{
+    height: 100%;
+    width: 90%;
+    border: 1px solid lightgrey;
+    border-radius: 6px;
+    outline: none;
+    padding: 0 15px;
+    font-size: 17px;
+    font-family:  "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+    transition: all 0.3s ease;
+}
+.contact .right form .field input:focus,
+.contact .right form .textarea textarea:focus{
+    border-color: #b3b3b3;
+}
+.contact .right form .textarea textarea{
+    padding-top: 10px;
+    resize: none;
+}
+
+.contact .right form .button{
+    height: 47px;
+    width: 170px;
+    margin-top: 20px;
+}
+.contact .right form .button button{
+    width: 100%;
+    height: 100%;
+    border: 2px solid #64ffda;
+    background: #64ffda;
+    color: #000;
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family:  "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+}
+.contact .right form .button button:hover{
+    color: #fff;
+    background: none;
+}
+.copyright {
+	width: 100%;
+	padding: 8px 100px;
+	text-align: center;
+	color: #fff;
+	font-family:  "SF Mono","Fira Code","Fira Mono","Roboto Mono",monospace;
+}
+.copyright:hover {
+	color: #64ffda;
+}
+@media only screen and (max-width: 1200px) {
+/*  large devices,wide screens*/
+	body {
+		width: 100%;
+		padding: 0;
+		margin: 0 auto;
+	} 
+	.contentBx p {
+		font-size: 16px;
+	}
+	.about {
+		margin-left: 10%;
+		padding: 0;
+
+	}
+	.services {
+		margin-left: 15%;
+		padding: 0;
+	}
+
+}
+@media only screen and (max-width: 992px) {
+    /*medium devices and desktops*/
+    .banner {
+    	padding-left: 200px;
+    }
+    .w50 img {
+		object-fit: cover;
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 768px) {
+    /*small devices tablets*/
+    .banner {
+    	padding-left: 100px;
+    }
+    .heading {
+    	margin-bottom: 100px;
+    	width: 80%;
+    }
+    header {
+    	padding: 5px;
+    }
+    .w50 img {
+		object-fit: cover;
+		width: 100%;
+	}
+}
+@media only screen and (max-width: 480px) {
+    /*extra small devices phones*/
+    header {
+    	padding-left: 30px;
+    }
+    .banner {
+    	padding-left: 100px;
+    }
+    .heading {
+    	margin-bottom: 100px;
+    	width: 100%;
+    }
+    .content {
+    	flex-direction: column;
+    }
+    .img {
+    	margin-top: 50px;
+    	width: 400px;
+    }
+   .contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
+	}
+	.textBx {
+		text-align: justify;
+	}
+	.services .serv-content .card {
+		margin-right: 100px;
+	}
+
+}
+@media only screen and (max-width: 480px) {
+	  .banner {
+    	padding-left: 50px;
+    }
+       .contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
+	}
+	
+
+}
+@media only screen and (max-width: 500px) {
+	.services .serv-content .card {
+		margin-right: 100px;
+	}
+	   .contact .right form .field,
+.contact .right form .fields .field{
+    height: 45px;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.contact .right form .textarea{
+    height: 80px;
+    width: 100%;
+	}
+}
