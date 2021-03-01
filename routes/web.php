@@ -39,13 +39,14 @@ Route::get('/contacts', function () {
 
 Route::get('/post/create',function(){
     DB::table('post')->insert([
-        'title' => 'Laravel + MySQL',
+        'title' => 'Php + MySQL',
         'body' => 'Connecting phpMyAdmin to database'
     ]);
 });
 
 
-Route::get('/post',function(){
-    $post = post::find(1);
+Route::get('/post/{id}',function($id){
+    $post = post::find($id);
+    
     return $post->title;
 }); 
