@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\DB;
+
+
+use App\Models\post;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +37,15 @@ Route::get('/contacts', function () {
     return view('contacts');
 }) -> name('contacts');
 
+Route::get('/post/create',function(){
+    DB::table('post')->insert([
+        'title' => 'Laravel + MySQL',
+        'body' => 'Connecting phpMyAdmin to database'
+    ]);
+});
+
+
+Route::get('/post',function(){
+    $post = post::find(1);
+    return $post->title;
+}); 
