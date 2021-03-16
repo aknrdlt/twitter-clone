@@ -37,6 +37,10 @@ Route::get('/contacts', function () {
     return view('contacts');
 }) -> name('contacts');
 
+Route::get('/blog/index', function () {
+    return view('posts');
+}) -> name('blog');
+
 Route::get('/post/create',function(){
     DB::table('post')->insert([
         'title' => 'Php + MySQL',
