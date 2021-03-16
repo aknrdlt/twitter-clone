@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\DB;
 
 
 use App\Models\post;
+use App\Http\Controllers\BlogController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -54,3 +56,19 @@ Route::get('/post/{id}',function($id){
     
     return $post->title;
 }); 
+Route::get('/post',function(){
+    $post = Post::find(1);
+    // return $post->title;
+    return $post;
+});
+
+
+Route::get('/blog/index',[BlogController::class,'index']);
+
+Route::get('/blog/create', function(){
+    return view('blog.create');
+}); 
+Route::post('/blog/create',[BlogController::class,'store'])->name('add_post');
+Route::get('post/{id}',[BlogController::class,'getPost']);
+
+Route::get('/post',[BlogController::class,'index']); 

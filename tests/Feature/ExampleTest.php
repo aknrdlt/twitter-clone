@@ -14,8 +14,26 @@ class ExampleTest extends TestCase
      */
     public function testBasicTest()
     {
-        $response = $this->get('/');
+        $response = $this->get('/main');
+
 
         $response->assertStatus(200);
+    }
+    public function test_post_id_get_request()
+    {
+        $response = $this->get('/post/1');
+
+        $response->assertStatus(200);
+    }
+
+    public function test_get_unexisted()
+    {
+        $response = $this->get('/post/100');
+
+        $response->assertStatus(404);
+    }
+    protected $items=[];
+    public function test_post_constructor($items = []){
+        $this->$items=$items;
     }
 }
