@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Post;
+use App\Models\post;
 
 class BlogController extends Controller
 {
@@ -13,7 +13,7 @@ class BlogController extends Controller
         return view('blog.index')->with(['Post' => $Post]);
     }
     public function store(Request $request){
-        Post::create([
+        post::create([
             'title' =>$request->title,
             'body' =>$request->body 
         ]);
@@ -21,7 +21,7 @@ class BlogController extends Controller
         return back();
     }
     public function getPost($id){
-        $post =  Post::find($id);
+        $post =  post::find($id);
 
         if($post == null){
             return response(['message' => 'post not found with this ID'],404);
