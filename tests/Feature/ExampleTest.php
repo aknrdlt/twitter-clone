@@ -33,7 +33,10 @@ class ExampleTest extends TestCase
         $response->assertStatus(404);
     }
     protected $items=[];
+    /**
+     * @doesNotPerformAssertions
+     */
     public function test_post_constructor($items = []){
-        $this->$items=$items;
+        $this-> items=$items;
     }
 }

@@ -7,7 +7,7 @@
     <title>Create new post</title>
 </head>
 <body>
-    <form method="POST" action="{{ route('add_post') }}">
+    <form method="POST" action="{{ route('add-post') }}">
         @csrf
         <input type="text" name="title" placeholder="Title">
         <input type="text" name="body" placeholder="Body">
