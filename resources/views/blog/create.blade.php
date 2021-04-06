@@ -7,7 +7,18 @@
     <title>Create new post</title>
 </head>
 <body>
-    <form method="POST" action="{{ route('add-post') }}">
+    <style>
+        #form{
+            justify-content: center;
+            text-align: center;
+            display: block; /* Make the links appear below each other */
+            width: 100px;
+        }
+        #form > *{
+            margin: 10px;
+        }
+    </style>
+    <form id="form" method="POST" action="{{ route('add-post') }}">
         @csrf
         <input type="text" name="title" placeholder="Title">
         <input type="text" name="body" placeholder="Body">
