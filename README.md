@@ -1,7 +1,7 @@
 <p>Project based on clone of Instagram.</p>
 <p>Project includes things such:</p>
 <ul>
-  <ol>Authentification</ol>
+  <ol type="number">Authentification</ol>
   <ol>Uploading file</ol>
   <ol>Localization</ol>
   <ol>Email chekhing feature</ol>
