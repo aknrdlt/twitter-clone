@@ -8,7 +8,7 @@ use App\Models\Form;
 class UploadController extends Controller
 {
     public function index() {
-        $form = Form::all();
+        $form = Form::paginate(5);
 
         return view('form.index')->with(['forms' => $form]);
     }
@@ -22,12 +22,10 @@ class UploadController extends Controller
         // dd($test);
         $request->validate([
             'name' => 'required',
-            'surname' => 'required',
-            'email' => 'required',
+            'body' => 'required',
             'photos' => 'required|mimes:jpg,png,jpeg,gif|max:5048'
         ]);
-
-         $newImageName = time() . '-' . $request->name . '.' . $request->photos->extension();
+        $newImageName =  $request->name . '.' . $request->photos->extension();
 
         $request->photos->move(public_path('uploads'), $newImageName);
 
@@ -36,8 +34,7 @@ class UploadController extends Controller
 
         Form::create([
             'name' => $request->name,
-            'surname' => $request->surname,
-            'email' => $request->email,
+            'body' => $request->body,
             'filename' => $newImageName
         ]);
 

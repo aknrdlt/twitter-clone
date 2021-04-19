@@ -86,6 +86,14 @@ Route::post('form/upload', [UploadController::class, 'uploadsubmit'])->name('add
 Route::get('form/upload', [UploadController::class,'uploadform']);
 
 Route::get('form/index', [UploadController::class, 'index' ]);
-
 //mail
-Route::get('/send', [MailController::class, 'send']);
+// Route::get('/send', [MailController::class, 'send']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/{lang}', function ($lang) {
+    App::setlocale($lang);
+    return view('home');
+});

@@ -1,12 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
-</head>
-<body>
-    {{ $forms }}
-</body>
-</html> 
+@extends('form.main')
+
+@section('content')
+    @foreach($forms as $post)
+        <div class="post">
+            <div class="image">
+                <img src="{{URL::asset('/uploads/' . $post->name . '.jpg')}}" height="300" width="400" alt="de">
+            </div>
+            <div class="info">
+                <h1>{{$post->name}}</h1>
+                <p style="font-size: 26px;">{{$post->body}}</p>
+            </div>
+        </div>
+    @endforeach
+@endsection
