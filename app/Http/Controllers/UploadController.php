@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Controllers\Auth;
+
 
 use Illuminate\Http\Request;
 use App\Models\Form;
@@ -25,7 +27,7 @@ class UploadController extends Controller
             'body' => 'required',
             'photos' => 'required|mimes:jpg,png,jpeg,gif|max:5048'
         ]);
-        $newImageName =  $request->name . '.' . $request->photos->extension();
+        $newImageName = auth()->user()->email . '-' . $request->name . '.' . $request->photos->extension();
 
         $request->photos->move(public_path('uploads'), $newImageName);
 
@@ -35,6 +37,7 @@ class UploadController extends Controller
         Form::create([
             'name' => $request->name,
             'body' => $request->body,
+            'email' => auth()->user()->email,
             'filename' => $newImageName
         ]);
 

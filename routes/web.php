@@ -8,8 +8,9 @@ use App\Models\post;
 use App\Models\Form;
 
 use App\Http\Controllers\UploadController;
-use App\Http\Controllers\MailController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\MailController;
 
 
 /*
@@ -24,7 +25,7 @@ use App\Http\Controllers\BlogController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/main', function () {
@@ -54,7 +55,8 @@ Route::get('/post/create',function(){
     ]);
 });
 
-
+Route::middleware(['set_locale']) -> group(function(){
+    
 Route::get('/post/{id}',function($id){
     $post = post::find($id);
     
@@ -65,15 +67,6 @@ Route::get('/post',function(){
     // return $post->title;
     return $post;
 });
-
-
-Route::get('/blog',[BlogController::class,'index']);
-
-Route::get('/blog/create', function(){
-    return view('blog.create');
-}); 
-
-Route::post('/blog/create',[BlogController::class,'store'])->name('add-post');
 
 Route::get('post/{id}',[BlogController::class,'getPost']);
 
@@ -86,14 +79,12 @@ Route::post('form/upload', [UploadController::class, 'uploadsubmit'])->name('add
 Route::get('form/upload', [UploadController::class,'uploadform']);
 
 Route::get('form/index', [UploadController::class, 'index' ]);
-//mail
-// Route::get('/send', [MailController::class, 'send']);
 
 Auth::routes();
+});
+
+Route::get('/send', [MailController::class, 'send']);
+
+Route::get('/locale/{locale}',[MainController::class,'changeLocale']) -> name('locale'); 
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/{lang}', function ($lang) {
-    App::setlocale($lang);
-    return view('home');
-});

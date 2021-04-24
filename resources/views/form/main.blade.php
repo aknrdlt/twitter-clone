@@ -24,7 +24,7 @@
       }
 
       .topnav a {
-        float: right;
+        float: left;
         color: #f2f2f2;
         text-align: center;
         padding: 14px 16px;
@@ -50,16 +50,35 @@
       .inputs{
         margin-top: 100px;
       }
+      select{
+        margin-top: 10px;
+        max-width:50px;
+        margin-left: 10px;  
+        height: 30px;
+        color: black;
+        position: absolute;
+        right: 170px;
+        font-size: 20px;
+      }
+
+      option{
+        color: black;
+        font-size: 10px;
+      }
+     
+      .topnav> * {
+        color: black;
+      }
     </style>
     <div class="container">
-      <header>             
+      <header class="header">             
         <div class="topnav">
           <a class="active" href="/form/index">{{ __('lang.home')}}</a>
           <a href="/form/upload">{{ __('lang.add')}}</a>
-          <a href="/register">{{ __('lang.register')}}</a>
-          <a href="/login">{{ __('lang.login')}}</a>
+          <a href="/register">{{ __('lang.books')}}</a>
+          <a href="{{route('locale', 'ru')}}">@lang('lang.set_lang')</a>
         </div>
-      </nav>
+      </header>
       <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
@@ -82,13 +101,13 @@
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('lang.login') }}</a>
                                 </li>
                             @endif
                             
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('lang.register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -101,7 +120,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        {{ __('lang.logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
