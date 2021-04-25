@@ -25,8 +25,6 @@ class UploadController extends Controller
     }
     public function uploadsubmit(Request $request) {
 
-        // $test = $request->file('photos')->getError();
-        // dd($test);
         $request->validate([
             'name' => 'required',
             'body' => 'required',
@@ -35,9 +33,6 @@ class UploadController extends Controller
         $newImageName = auth()->user()->email . '-' . $request->name . '.' . $request->photos->extension();
 
         $request->photos->move(public_path('uploads'), $newImageName);
-
-
-        // dd($test);
 
         Form::create([
             'name' => $request->name,

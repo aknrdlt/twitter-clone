@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
   <title>Project</title>
 </head>
 <body>
@@ -15,42 +16,6 @@
       body {
         margin: 0;
         font-family: Arial, Helvetica, sans-serif;
-      }
-
-      .topnav {
-        overflow: hidden;
-        background-color: #333;
-        padding-right: 150px;
-      }
-
-      .topnav a:last-child{
-        right: 150px;
-        position: absolute;
-      }
-
-      .topnav a {
-        float: left;
-        margin-right: 30px;
-        color: #f2f2f2;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-      }
-
-      .topnav a:hover {
-        background-color: #ddd;
-        color: black;
-      }
-
-      
-      .topnav> * {
-        color: black;
-      }
-
-      .topnav a.active {
-        background-color: #4CAF50;
-        color: white;
       }
       .post{
         display: flex;
@@ -76,37 +41,38 @@
       .inputs{
         margin-top: 70px;
       }
-      select{
-        margin-top: 10px;
-        max-width:50px;
-        margin-left: 10px;  
-        height: 30px;
-        color: black;
-        position: absolute;
-        right: 170px;
-        font-size: 20px;
-      }
 
-      option{
-        color: black;
-        font-size: 10px;
+      /* .fa-heart-o {
+        color: red;
+        cursor: pointer;
+      } */
+
+      .fa-heart {
+        color: red;
+        cursor: pointer;  
       }
     </style>
     <div class="container">
-      <header class="header">             
-        <div class="topnav">
-          <a class="active" href="/index">{{ __('lang.home')}}</a>
-          <a href="/upload">{{ __('lang.add')}}</a>
-          <a href="/news">{{ __('lang.others')}}</a>
-          <a href="{{ __('lang.set_lang')}}">{{ __('lang.set_lang')}}</a>
-        </div>
-      </header>
       <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                <ul style="margin-right: 500px;" class="nav">
+                  <li class="nav-item">
+                    <a class="nav-link active"  href="/index" >{{ __('lang.home')}}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/upload" >{{ __('lang.add')}}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/news" >{{ __('lang.others')}}</a>
+                  </li>
+                  <li>
+                    <a href="{{ __('lang.set_lang')}}">{{ __('lang.set_lang')}}</a>
+                  </li>
+                </ul> 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -136,15 +102,13 @@
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
-                                </a>
-
+                                </a>  
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('lang.logout') }}
                                     </a>
-
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
@@ -152,14 +116,29 @@
                             </li>
                         @endguest
                     </ul>
+                    
                 </div>
             </div>
         </nav>
+
 
         <main class="py-4">
             @yield('content')
         </main>
         @yield('upload')
     </div>
+      <script>                
+        $(document).ready(function(){
+          $("#heart").click(function(){
+            if($("#heart").hasClass("liked")){
+              $("#heart").html('<i class="fas fa-heart fa-lg" aria-hidden="true"></i>');
+              $("#heart").removeClass("liked");
+            }else{
+              $("#heart").html('<i class="far fa-heart fa-lg" aria-hidden="true"></i>');
+              $("#heart").addClass("liked");
+            }
+          });
+        });
+      </script>
 </body>
 </html>

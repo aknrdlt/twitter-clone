@@ -16,7 +16,6 @@ class CreateFormsTable extends Migration
         Schema::create('forms', function (Blueprint $table) {
             $table->id();
             $table->string('email');
-            $table->string('role', ['user','admin'])->default('user')->change();
             $table->string("name");
             $table->text("body");
             $table->string("filename");

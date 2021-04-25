@@ -12,6 +12,15 @@
                         <h3 style="font-weight: bold;">{{$post->name}}</h3>
                         <p style="width:600px;overflow-wrap: break-word;font-size: 16px;">{{$post->body}}</p>
                         <p class="author"><strong>Author: {{$post->email}}</strong></p>
+                        <form method="get" action="{{ route('send-comment') }}" style="position: absolute; bottom: 0; left: 10px;" class="form-inline">
+                            <div class="form-group mx-sm-3 mb-2">
+                                <span id="heart" style="margin-right: 10px;">
+                                    <i class="far fa-heart fa-lg" aria-hidden="true"></i> 
+                                </span>
+                                <input type="text" name="comment" class="form-control" placeholder="Comment">
+                            </div>
+                            <button type="submit" class="btn btn-primary mb-2">Send</button>
+                        </form>
                     </div>  
                 </div>
             @endif

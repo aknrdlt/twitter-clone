@@ -7,6 +7,7 @@ use App\Models\Form;
 
 use App\Http\Controllers\UploadController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\HomeController;
@@ -26,20 +27,19 @@ use Illuminate\Support\Facades\Auth;
 
 Auth::routes();
 
-Route::post('upload', [UploadController::class, 'uploadsubmit'])->name('add-form');
+Route::post('/upload', [UploadController::class, 'uploadsubmit'])->name('add-form');
 
-Route::get('upload', [UploadController::class,'uploadform']);
+Route::get('/upload', [UploadController::class,'uploadform']);
 
-Route::get('index', [UploadController::class, 'index' ]);
+Route::get('/index', [UploadController::class, 'index' ]);
+
+Route::get('/adds', [CommentController::class, 'adds' ]) -> name('send-comment');
+
+Route::get('/comments', [UploadController::class,'uploadform']);
     
 Route::get('/send', [MailController::class, 'send']);
 
 Route::get('/news', [UploadController::class, 'others' ]);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-
-Route::get('/{lang}',function($lang){
-    App::setlocale($lang);  
-    return view('home');
-});
 
