@@ -14,6 +14,11 @@ class UploadController extends Controller
 
         return view('form.index')->with(['forms' => $form]);
     }
+    public function others() {
+        $form = Form::paginate(5);
+
+        return view('post_of_others')->with(['forms' => $form]);
+    }
 
     public function uploadform() {
         return view('form.upload');
@@ -41,6 +46,6 @@ class UploadController extends Controller
             'filename' => $newImageName
         ]);
 
-        return redirect('/form/upload');
+        return redirect('/upload');
     }
 }

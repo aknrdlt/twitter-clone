@@ -1,19 +1,30 @@
 @extends('form.main')
 
 @section('content')
-    @foreach($forms as $post)
-        @isset(auth()->user()->email)  
-            @if(file_exists(public_path() . '/uploads/' . auth()->user()->email . '-' . $post->name . '.jpg'))
+    @php
+        $b = 1;
+    @endphp
+    @isset(auth()->user()->email)  
+        @foreach($forms as $post)  
+            @if(file_exists(public_path() . '/uploads/' . auth()->user()->email . '-' . $post->name . '.png'))
                  <div class="post">
+                 @php
+                    $b = 2;
+                 @endphp
                     <div class="image">
-                        <img src="{{URL::asset('/uploads/' . auth()->user()->email . '-' . $post->name . '.jpg')}}" height="300" width="400" alt="de">
+                        <img src="{{URL::asset('/uploads/' . auth()->user()->email . '-' . $post->name . '.png')}}" height="250" width="400" alt="no">
                     </div>
                     <div class="info">
-                        <h1>{{$post->name}}</h1>
-                        <p style="font-size: 26px;">{{$post->body}}</p>
+                        <h3 style="font-weight: bold;">{{$post->name}}</h3>
+                        <p style="width:600px;overflow-wrap: break-word;font-size: 16px;">{{$post->body}}</p>
                     </div>
                 </div>
             @endif
-        @endisset
-    @endforeach
+        @endforeach
+        @if($b == 2)
+            {{ $forms->links() }}
+        @else
+            <h3><strong>No posts yet!</strong></h3>
+        @endif
+    @endisset
 @endsection

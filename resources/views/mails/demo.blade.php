@@ -1,6 +1,5 @@
 <div> {{$demo->receiver}}</div>
 Hello!
-Nice to meet you!
-Have a nice day!
+Somebody entered to your account YoBlog account!
 
 <div> {{$demo->sender}}</div>

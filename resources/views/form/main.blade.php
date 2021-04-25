@@ -23,8 +23,14 @@
         padding-right: 150px;
       }
 
+      .topnav a:last-child{
+        right: 150px;
+        position: absolute;
+      }
+
       .topnav a {
         float: left;
+        margin-right: 30px;
         color: #f2f2f2;
         text-align: center;
         padding: 14px 16px;
@@ -37,18 +43,38 @@
         color: black;
       }
 
+      
+      .topnav> * {
+        color: black;
+      }
+
       .topnav a.active {
         background-color: #4CAF50;
         color: white;
       }
       .post{
         display: flex;
+        background-color:#C7CBCE;
+        padding: 15px;
+        margin-top:10px;
+        border-radius: 10px
       }
-      .post *{
-        margin-top: 20px ;
+    
+      .info{
+        margin-left:20px;
+        background-color:#E7E7E9;
+        padding-left: 5px;
+        width: 600px;
+        border-radius: 10px;
+        position: relative;
+      }
+      .author{
+        position: absolute;
+        bottom: 0;
+        right: 15px;
       }
       .inputs{
-        margin-top: 100px;
+        margin-top: 70px;
       }
       select{
         margin-top: 10px;
@@ -65,18 +91,14 @@
         color: black;
         font-size: 10px;
       }
-     
-      .topnav> * {
-        color: black;
-      }
     </style>
     <div class="container">
       <header class="header">             
         <div class="topnav">
-          <a class="active" href="/form/index">{{ __('lang.home')}}</a>
-          <a href="/form/upload">{{ __('lang.add')}}</a>
-          <a href="/register">{{ __('lang.books')}}</a>
-          <a href="{{route('locale', 'ru')}}">@lang('lang.set_lang')</a>
+          <a class="active" href="/index">{{ __('lang.home')}}</a>
+          <a href="/upload">{{ __('lang.add')}}</a>
+          <a href="/news">{{ __('lang.others')}}</a>
+          <a href="{{ __('lang.set_lang')}}">{{ __('lang.set_lang')}}</a>
         </div>
       </header>
       <div id="app">

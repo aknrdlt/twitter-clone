@@ -1,15 +1,19 @@
 <?php
  return [ 'home' => 'Home',
+    'name' => 'Name',
+    'address' => 'E-Mail Address',
+    'password' => 'Password',
+    'confirm' => 'Confirm Password',
     'login'=> 'Login',
     'logout'=>'Logout',
     'title'=>'Title',
     'choose_photo' => 'Choose photo',
     'post'=> 'Post',
-    'books'=>'Books',
+    'others'=>'News',
     'add'=> 'Add',
     'register'=> 'Register',
     'current_lang' => 'en',
-    'email' => 'E-Mail Address'
+    'email' => 'E-Mail Address',
     'set_lang'=>'ru',
   ]
 ?>
