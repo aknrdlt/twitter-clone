@@ -1,6 +1,5 @@
 <p>Project based on clone of Instagram.</p>
 <h1 align="center">ERD diagram</h1>
-![image](https://user-images.githubusercontent.com/63612206/116020271-c7459300-a667-11eb-9d3c-553207fba79d.png)
 
  In project you can register with your e-mail address. You can add your post with name, text and image. In website you can see posts of other people. Then if you want comment it you can do it easily. All informations and comments will saved in database. Project available in two languages. 
 <p>Project includes things such:</p>
@@ -16,3 +15,4 @@
 - [MySQL](https://openjfx.io/)
 
 
+![Снимок экрана 2021-04-26 082118](https://user-images.githubusercontent.com/63612206/116020643-87cb7680-a668-11eb-9bed-ffc1877fdccb.png)
