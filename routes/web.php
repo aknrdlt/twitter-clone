@@ -37,3 +37,8 @@ use Illuminate\Support\Facades\Auth;
         
     Route::get('/send', [MailController::class, 'send']);
 
+    Route::get('/{lang}',function($lang){
+        App::setlocale($lang);  
+        return view('form.main');
+    });
+

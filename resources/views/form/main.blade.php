@@ -33,12 +33,6 @@
         border-radius: 10px;
         position: relative;
       }
-      /* .comments{
-        width: 230px;
-        margin-left: 20px;
-        background-color:#E7E7E9;
-        border-radius: 10px;
-      } */
       .author{
         position: absolute;
         bottom: 0;
@@ -83,6 +77,8 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                       <!--  -->
+
+                      
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
@@ -101,6 +97,7 @@
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
                                 </a>  
+
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ url('/logout' ) }}"
                                        onclick="event.preventDefault();
@@ -112,6 +109,12 @@
                                     </form>
                                 </div>
                             </li>
+                            <li class="nav-item">
+                              <a href="en">EN</a>
+                              </li>
+                              <li class="nav-item">
+                                <a href="ru">RU</a>
+                              </li>
                         @endguest
                     </ul>
                     

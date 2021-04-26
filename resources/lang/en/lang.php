@@ -13,5 +13,7 @@
     'add'=> 'Add',
     'register'=> 'Register',
     'email' => 'E-Mail Address',
+    'Dashboard' => 'Dashboard',
+    'You are logged in!'=>'You are logged in!'
   ]
 ?>
