@@ -7,10 +7,6 @@ use Illuminate\Http\Request;
 
 class CommentController extends Controller
 {
-    public function comments() {
-        $comments = Adds::paginate(5);
-        return view('comments')->with(['comments' => $comments]);
-    }
 
     public function adds(Request $request) {
         $request->validate([

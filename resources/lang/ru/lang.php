@@ -12,7 +12,5 @@
   'others'=>'Новости',
   'add'=> 'Добавить',
   'register'=> 'Регистрация',
-  'current_lang' => 'ru',
-  'set_lang'=>'en',
  ]
 ?>

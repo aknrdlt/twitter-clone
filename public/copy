@@ -1,0 +1,7 @@
+@foreach(config('app.available_locales') as $locale)
+                        <li class="nav-item">
+                            <a class="nav-link" 
+                            @if(app()-> getLocale() == $locale) style="text-decoration: underline;" @endif 
+                            href="{{route(\Illuminate\Support\Facades\Route::currentRouteName(), 'en') }}">{{strtoupper($locale)}}</a>
+                        </li>
+                      @endforeach

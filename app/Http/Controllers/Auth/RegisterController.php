@@ -71,11 +71,14 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
-        $user -> receiver = 'Nurlan';
-        $user -> sender = 'YoBlog Adminstration';
+        $user -> receiver = $data['name'];
+        $user -> sender = 'Adminstration';
 
         Mail::to($data['email'])->send(new WelcomeMail($user));
 
         return $user;
+    }
+    public function redirectTo(){
+        return '/home';
     }
 }

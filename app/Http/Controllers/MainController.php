@@ -13,6 +13,7 @@ class MainController extends Controller
         
         App::setLocale($locale);
 
+
         return redirect()->back();
    }
 }

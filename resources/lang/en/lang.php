@@ -12,8 +12,6 @@
     'others'=>'News',
     'add'=> 'Add',
     'register'=> 'Register',
-    'current_lang' => 'en',
     'email' => 'E-Mail Address',
-    'set_lang'=>'ru',
   ]
 ?>

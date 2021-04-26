@@ -33,6 +33,12 @@
         border-radius: 10px;
         position: relative;
       }
+      /* .comments{
+        width: 230px;
+        margin-left: 20px;
+        background-color:#E7E7E9;
+        border-radius: 10px;
+      } */
       .author{
         position: absolute;
         bottom: 0;
@@ -41,12 +47,6 @@
       .inputs{
         margin-top: 70px;
       }
-
-      /* .fa-heart-o {
-        color: red;
-        cursor: pointer;
-      } */
-
       .fa-heart {
         color: red;
         cursor: pointer;  
@@ -61,16 +61,13 @@
                 </a>
                 <ul style="margin-right: 500px;" class="nav">
                   <li class="nav-item">
-                    <a class="nav-link active"  href="/index" >{{ __('lang.home')}}</a>
+                    <a class="nav-link active"  href="{{url('/index')}}" >{{ __('lang.home')}}</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/upload" >{{ __('lang.add')}}</a>
+                    <a class="nav-link" href="{{url('/upload')}}" >{{ __('lang.add')}}</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/news" >{{ __('lang.others')}}</a>
-                  </li>
-                  <li>
-                    <a href="{{ __('lang.set_lang')}}">{{ __('lang.set_lang')}}</a>
+                    <a class="nav-link" href="{{url('/news')}}" >{{ __('lang.others')}}</a>
                   </li>
                 </ul> 
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -85,17 +82,18 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                      <!--  -->
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('lang.login') }}</a>
+                                    <a class="nav-link" href="{{ url('/login' ) }}">{{ __('lang.login') }}</a>
                                 </li>
                             @endif
                             
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('lang.register') }}</a>
+                                    <a class="nav-link" href="{{ url('/register' ) }}">{{ __('lang.register') }}</a>
                                 </li>
                             @endif
                         @else
@@ -104,12 +102,12 @@
                                     {{ Auth::user()->name }}
                                 </a>  
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item" href="{{ url('/logout' ) }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('lang.logout') }}
                                     </a>
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    <form id="logout-form" action="{{ url('/logout' ) }}" method="POST" class="d-none">
                                         @csrf
                                     </form>
                                 </div>
@@ -125,6 +123,7 @@
         <main class="py-4">
             @yield('content')
         </main>
+        @yield('comments')
         @yield('upload')
     </div>
       <script>                
